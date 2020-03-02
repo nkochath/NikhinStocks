@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Price</th>
+        <th>Ticker</th>
+      </tr>
+    </thead>
+
+    {% for item in data %}
+      <td>{{ data[item] }}</td>
+    {% endfor %}
+  </table>
+    <form action="/quote" method="post">
+        <div class="form-group">
+            <input required autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Get Quote</button>
+    </form>
+{% endblock %}

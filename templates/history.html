@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transactions
+{% endblock %}
+
+{% block main %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Company</th>
+        <th>Symbol</th>
+        <th>Price</th>
+        <th>Number of Shares</th>
+        <th>Transaction Amount</th>
+        <th>Transaction Type</th>
+        <th>Transaction Time</th>
+      </tr>
+    </thead>
+    {% for item in data %}
+      <tr>
+        <td>{{ item[1] }}</td>
+        <td>{{ item[2] }}</td>
+        <td>{{ item[3] }}</td>
+        <td>{{ item[4] }}</td>
+        <td>{{ item[5] }}</td>
+        <td>{{ item[6] }}</td>
+        <td>{{ item[7] }}</td>
+        <td>{{ item[8] }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+{% endblock %}

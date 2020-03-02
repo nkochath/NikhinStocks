@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Symbol</th>
+        <th>Shares</th>
+        <th>Current Price</th>
+        <th>Current Value</th>
+      </tr>
+    </thead>
+    {% for item in data %}
+      <tr>
+        <td>{{ item[2] }}</td>
+        <td>{{ item[3] }}</td>
+        <td>{{ item[4] }}</td>
+        <td>{{ item[5] }}</td>
+        <td>{{ item[6] }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  <h5>Current Cash: ${{ cash }}</h5>
+  <h5>Total Assets: {{ total_value }}</h5>
+
+{% endblock %}
